@@ -1,104 +1,154 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Strony od Karola</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f4f8;
-      color: #222;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-    .container {
-      background: white;
-      max-width: 420px;
-      width: 90%;
-      padding: 30px 25px;
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
-      text-align: center;
-    }
-    h1 {
-      margin-bottom: 10px;
-      color: #2c3e50;
-    }
-    p {
-      font-size: 1.1rem;
-      line-height: 1.5;
-      margin-bottom: 25px;
-    }
-    a.email-link {
-      display: inline-block;
-      background: #2980b9;
-      color: white;
-      padding: 12px 22px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-    a.email-link:hover {
-      background: #1c5980;
-    }
-    small {
-      display: block;
-      margin-top: 20px;
-      color: #666;
-      font-size: 0.85rem;
-    }
-    .portfolio {
-      margin-top: 40px;
-      text-align: left;
-    }
-    .portfolio h2 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: #2c3e50;
-    }
-    .portfolio ul {
-      list-style: none;
-      padding: 0;
-    }
-    .portfolio li {
-      margin: 8px 0;
-    }
-    .portfolio a {
-      color: #2980b9;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .portfolio a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karol Samulak - Tworzenie Stron Internetowych</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Strony od Karola</h1>
-    <p>
-      Masz firmę lub usługę i chcesz prostą, przejrzystą stronę internetową?<br />
-      Zrobię dla Ciebie stronę-wizytówkę, formularz kontaktowy, mapkę i więcej.<br />
-      Szybko, tanio i solidnie!<br />
-      Ceny już od 200 zł.
-    </p>
-    <a href="mailto:paczkatoja07@gmail.com" class="email-link">Napisz do mnie</a>
-    <small>Portfolio dostępne poniżej. Wystawiam rachunek przez Useme na życzenie.</small>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Karol Samulak - Tworzenie Stron</div>
+                <ul>
+                    <li><a href="#hero">Start</a></li>
+                    <li><a href="#about">O Ofercie</a></li>
+                    <li><a href="#portfolio">Realizacje</a></li>
+                    <li><a href="#pricing">Cennik</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <div class="portfolio">
-      <h2>Przykładowe realizacje:</h2>
-      <ul>
-        <li><a href="projekty/projekt1/fryzjer.html">Strona salonu fryzjerskiego</a></li>
-        <li><a href="projekty/projekt2/UsługiElektryczne.html">Usługi elektryczne</a></li>
-        <li><a href="projekty/projekt3/index.html">Portfolio fotografa</a></li>
-      </ul>
-    </div>
-  </div>
+    <main>
+        <section id="hero" class="hero-section hero-offer-card">
+            <div class="container">
+                <div class="offer-card">
+                    <h2>Strony od Karola</h2>
+                    <p class="card-description">
+                        Masz firmę lub usługę i chcesz prostą, przejrzystą stronę internetową?
+                        Zrobię dla Ciebie stronę-wizytówkę, formularz kontaktowy, mapę i więcej.
+                    </p>
+                    <p class="card-slogan">Szybko, tanio i solidnie!</p>
+                    <div class="card-price">Ceny już od <span class="price-value">200 zł</span></div>
+                    <a href="#contact" class="btn card-btn">Napisz do mnie</a>
+                    <p class="card-note">
+                        Portfolio dostępne poniżej. Wystawiam rachunek przez Useme na życzenie.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>Czym się zajmuję?</h2>
+                <p>Jestem Karol i tworzę profesjonalne, estetyczne i funkcjonalne strony internetowe dla małych firm i usługodawców. Moim celem jest dostarczenie Ci skutecznej wizytówki w sieci, która przyciągnie nowych klientów i będzie jasnym źródłem informacji o Twojej działalności.</p>
+                <p>Nie potrzebujesz skomplikowanych rozwiązań? Szukasz strony, która po prostu działa, jest czytelna i łatwo dostępna dla każdego? Dobrze trafiłeś! Skupiam się na prostocie i efektywności, aby Twoja obecność online była skuteczna bez zbędnych kosztów.</p>
+            </div>
+        </section>
+
+        <section id="portfolio" class="gallery-section">
+            <div class="container">
+                <h2>Przykładowe Realizacje</h2>
+                <p>Zobacz, co mogę dla Ciebie stworzyć. (Upewnij się, że zdjęcia są w tym samym folderze, lub podmień ścieżki!)</p>
+                <div class="gallery">
+                    <a href="projekty/projekt1/fryzjer.html">"Strona internetowa dla salonu fryzjerskiego">
+                        <img src="fryzjer.png" alt="Strona dla fryzjera">
+                    </a>
+                    <a href="projekty/projekt2/UsługiElektryczne.html">"Strona internetowa dla usług elektrycznych">
+                        <img src="tech.png" alt="Strona dla usług technicznych">
+                    </a>
+                    <a href="projekty/projekt3/index.html">"Strona internetowa dla fotografa">
+                        <img src="fotografia.png" alt="Strona dla fotografa">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing-section">
+            <div class="container">
+                <h2>Co oferuję i ile to kosztuje?</h2>
+                <p>Poniżej znajdziesz orientacyjny cennik i zakres usług. Każdy projekt wyceniam indywidualnie, aby najlepiej dopasować się do Twoich potrzeb i budżetu.</p>
+                <div class="pricing-cards-wrapper">
+                    <div class="pricing-card">
+                        <h3>Strona-Wizytówka</h3>
+                        <p class="card-description">
+                            Idealna dla małych firm i usługodawców. Jedna, przejrzysta strona z najważniejszymi informacjami:
+                            O firmie, kontakt, oferta, mapa, galeria (do 5 zdjęć).
+                        </p>
+                        <div class="card-price">Od <span class="price-value">200 zł</span></div>
+                        <a href="#contact" class="btn card-btn">Dowiedz się więcej</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3>Strona z Formularzem</h3>
+                        <p class="card-description">
+                            Strona-wizytówka wzbogacona o funkcjonalny formularz kontaktowy.
+                            Klienci mogą łatwo wysłać zapytanie, a Ty otrzymasz je na maila.
+                        </p>
+                        <div class="card-price">Od <span class="price-value">300 zł</span></div>
+                        <a href="#contact" class="btn card-btn">Zapytaj o ten pakiet</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3>Rozbudowana Strona</h3>
+                        <p class="card-description">
+                            Więcej podstron (np. Usługi, O nas, Kontakt), rozbudowana galeria,
+                            integracja z mediami społecznościowymi. Dostosowana do Twoich potrzeb.
+                        </p>
+                        <div class="card-price">Wycena <span class="price-value">Indywidualna</span></div>
+                        <a href="#contact" class="btn card-btn">Poproś o wycenę</a>
+                    </div>
+                </div>
+                <p class="pricing-note">
+                    Wszystkie strony są responsywne (dostosowane do urządzeń mobilnych).
+                    Cena nie obejmuje kosztów domeny i hostingu. Wystawiam rachunek przez Useme na życzenie.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Napisz do mnie!</h2>
+                <p>Chcesz dowiedzieć się więcej lub zamówić stronę? Skontaktuj się ze mną!</p>
+                <form class="contact-form">
+                    <input type="text" placeholder="Twoje imię i nazwisko" required>
+                    <input type="email" placeholder="Twój adres e-mail" required>
+                    <textarea placeholder="Opisz, jakiej strony potrzebujesz lub zadaj pytanie." rows="6" required></textarea>
+                    <button type="submit" class="btn">Wyślij wiadomość</button>
+                </form>
+                <div class="social-links">
+                    <p>Znajdź mnie również:</p>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Karol Samulak - Tworzenie Stron Internetowych. Wszelkie prawa zastrzeżone.</p>
+            <p><a href="#">Polityka Prywatności</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var lightbox = new SimpleLightbox('.gallery a', {
+                captionSelector: 'img',
+                captionsData: 'alt',
+                animationSpeed: 150,
+                fadeSpeed: 200,
+                scrollZoom: false,
+            });
+        });
+    </script>
 </body>
 </html>
