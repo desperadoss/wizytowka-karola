@@ -1,0 +1,411 @@
+/* Ogólne style */
+:root {
+    --primary-font: 'Playfair Display', serif; /* Dla nagłówków, elegancka czcionka szeryfowa */
+    --secondary-font: 'Raleway', sans-serif; /* Dla treści, czcionka bezszeryfowa */
+
+    --dark-color: #1a1a1a;
+    --light-color: #f8f8f8;
+    --medium-grey: #666;
+    --accent-color: #b0a07a; /* Delikatny, złoty/brązowy akcent */
+    --white-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--secondary-font);
+    line-height: 1.7;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    overflow-x: hidden; /* Zapobiega poziomemu przewijaniu */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+h1, h2, h3 {
+    font-family: var(--primary-font);
+    color: var(--dark-color);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3.5em; /* Dla strony głównej, jeśli będzie na niej widoczny */
+}
+
+h2 {
+    font-size: 2.8em;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+a {
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    padding: 12px 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* Header i nawigacja */
+header {
+    background-color: var(--white-color);
+    padding: 25px 0;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--primary-font);
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+nav ul li a {
+    color: var(--dark-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95em;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Sekcje ogólne */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* Sekcja Galeria (Home) */
+.gallery-section {
+    background-color: var(--light-color);
+    padding-top: 50px;
+}
+
+.gallery-section h2 {
+    font-size: 2.2em;
+    font-weight: 400;
+    margin-bottom: 50px;
+    color: var(--medium-grey);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px; /* Odstęp między zdjęciami */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery a {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 300px; /* Stała wysokość dla wszystkich zdjęć w siatce */
+    object-fit: cover; /* Ważne, aby zdjęcia pokrywały całą przestrzeń */
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gallery a:hover img {
+    transform: scale(1.05); /* Delikatne powiększenie przy najechaniu */
+    filter: brightness(0.9); /* Delikatne przyciemnienie */
+}
+
+/* Sekcja O mnie */
+.about-section {
+    background-color: var(--white-color);
+    padding: 100px 0;
+}
+
+.about-section p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.profile-img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Sekcja Usługi */
+.services-section {
+    background-color: var(--light-color);
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.service-item {
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item h3 {
+    text-align: left;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.service-item p {
+    font-size: 1em;
+    color: var(--medium-grey);
+}
+
+.price-info {
+    font-style: italic;
+    color: var(--medium-grey);
+    margin-top: 30px;
+    font-size: 1.1em;
+}
+
+
+/* Sekcja Kontakt */
+.contact-section {
+    background-color: var(--white-color);
+}
+
+.contact-section p {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    font-size: 1.1em;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--light-color);
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: var(--secondary-font);
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.social-links {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.social-links p {
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.social-links a {
+    font-size: 2em;
+    margin: 0 15px;
+    color: var(--medium-grey);
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--white-color);
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsywność */
+@media (max-width: 992px) {
+    .logo {
+        font-size: 1.8em;
+    }
+    nav ul li {
+        margin-left: 25px;
+    }
+    h1 {
+        font-size: 2.8em;
+    }
+    h2 {
+        font-size: 2.2em;
+    }
+    .gallery img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+    .logo {
+        margin-bottom: 20px;
+    }
+    nav ul li {
+        margin: 0 15px;
+    }
+    h1 {
+        font-size: 2.2em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    section {
+        padding: 60px 0;
+    }
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .gallery img {
+        height: 200px;
+    }
+    .service-list {
+        grid-template-columns: 1fr;
+    }
+    .contact-form {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.6em;
+    }
+    nav ul li {
+        margin: 0 10px;
+        font-size: 0.85em;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+    .container {
+        padding: 0 15px;
+    }
+    .gallery {
+        gap: 10px;
+    }
+    .gallery img {
+        height: 180px;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .social-links a {
+        font-size: 1.8em;
+        margin: 0 10px;
+    }
+}
