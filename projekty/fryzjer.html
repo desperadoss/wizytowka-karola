@@ -3,67 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Salon Fryzjerski „Styl”</title>
+  <title>Salon Fryzjerski Elegance</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #fafafa;
       color: #333;
     }
     header {
+      background: #a0522d; /* ciepły brąz */
+      color: white;
+      padding: 20px 40px;
       text-align: center;
-      margin-bottom: 30px;
     }
-    h1 {
-      color: #a52a2a;
-    }
-    .info {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .info p {
-      line-height: 1.6;
-    }
-    a.back-link {
-      display: inline-block;
-      margin-top: 30px;
-      color: #a52a2a;
+    nav a {
+      color: white;
+      margin: 0 15px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      transition: color 0.3s;
     }
-    a.back-link:hover {
-      text-decoration: underline;
+    nav a:hover {
+      color: #ffd700; /* złoty */
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h1, h2 {
+      margin-bottom: 15px;
+    }
+    .about {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .about img {
+      width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(160, 82, 45, 0.3);
+    }
+    .about p {
+      font-size: 18px;
+      line-height: 1.5;
+      flex: 1;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+    }
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 12px 15px;
+      text-align: left;
+    }
+    table th {
+      background: #a0522d;
+      color: white;
+    }
+    footer {
+      background: #a0522d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .contact {
+      font-size: 18px;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Salon Fryzjerski „Styl”</h1>
-    <p>Twój wygląd — nasza pasja!</p>
+    <h1>Salon Fryzjerski Elegance</h1>
+    <nav>
+      <a href="index.html">Strona główna</a>
+      <a href="cennik.html">Cennik</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
   </header>
-  <section class="info">
-    <h2>O nas</h2>
-    <p>Salon Fryzjerski „Styl” to miejsce, gdzie każdy klient może liczyć na profesjonalną obsługę i indywidualne podejście.  
-       Nasz doświadczony zespół zadba o Twoje włosy, oferując modne fryzury oraz pielęgnację najwyższej jakości.</p>
-
-    <h2>Usługi</h2>
-    <ul>
-      <li>Strzyżenie damskie i męskie</li>
-      <li>Koloryzacja włosów</li>
-      <li>Modelowanie i stylizacja</li>
-      <li>Zabiegi regenerujące</li>
-    </ul>
-
-    <h2>Kontakt</h2>
-    <p>📞 Telefon: 123-456-789</p>
-    <p>📍 Adres: ul. Piękna 15, Warszawa</p>
-  </section>
-
-  <a href="../index.html" class="back-link">← Powrót do wizytówki</a>
+  
+  <div class="container">
+    <section class="about">
+      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=400&q=80" alt="Salon fryzjerski">
+      <p>Witamy w salonie Elegance! Oferujemy profesjonalne usługi fryzjerskie dla kobiet i mężczyzn. Nasz zespół to doświadczeni styliści, którzy zadbają o Twój wygląd i dobre samopoczucie. Od klasycznych cięć po modne stylizacje – u nas każdy znajdzie coś dla siebie.</p>
+    </section>
+    
+    <section class="gallery">
+      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=400&q=80" alt="Fryzura 1">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Fryzura 2">
+      <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=400&q=80" alt="Fryzura 3">
+      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Fryzura 4">
+    </section>
+    
+  </div>
+  
+  <footer>
+    &copy; 2025 Salon Fryzjerski Elegance | Tel: 123-456-789 | Email: kontakt@elegance.pl
+  </footer>
 </body>
 </html>
