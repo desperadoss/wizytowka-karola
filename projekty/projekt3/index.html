@@ -28,23 +28,23 @@
             <div class="container">
                 <h2>Uchwycone emocje. Opowieści w kadrze.</h2>
                 <div class="gallery">
-                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Moje zdjęcie testowe 1">
-                        <img src="https://i.imgur.com/XChNwTv.png" alt="Moje zdjęcie testowe 1">
+                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Zdjęcie testowe 1">
+                        <img src="https://i.imgur.com/XChNwTv.png" alt="Zdjęcie testowe 1">
                     </a>
-                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Moje zdjęcie testowe 2">
-                        <img src="https://i.imgur.com/XChNwTv.png" alt="Moje zdjęcie testowe 2">
+                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Zdjęcie testowe 2">
+                        <img src="https://i.imgur.com/XChNwTv.png" alt="Zdjęcie testowe 2">
                     </a>
-                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Moje zdjęcie testowe 3">
-                        <img src="https://i.imgur.com/XChNwTv.png" alt="Moje zdjęcie testowe 3">
+                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Zdjęcie testowe 3">
+                        <img src="https://i.imgur.com/XChNwTv.png" alt="Zdjęcie testowe 3">
                     </a>
-                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Moje zdjęcie testowe 4">
-                        <img src="https://i.imgur.com/XChNwTv.png" alt="Moje zdjęcie testowe 4">
+                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Zdjęcie testowe 4">
+                        <img src="https://i.imgur.com/XChNwTv.png" alt="Zdjęcie testowe 4">
                     </a>
-                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Moje zdjęcie testowe 5">
-                        <img src="https://i.imgur.com/XChNwTv.png" alt="Moje zdjęcie testowe 5">
+                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Zdjęcie testowe 5">
+                        <img src="https://i.imgur.com/XChNwTv.png" alt="Zdjęcie testowe 5">
                     </a>
-                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Moje zdjęcie testowe 6">
-                        <img src="https://i.imgur.com/XChNwTv.png" alt="Moje zdjęcie testowe 6">
+                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Zdjęcie testowe 6">
+                        <img src="https://i.imgur.com/XChNwTv.png" alt="Zdjęcie testowe 6">
                     </a>
                     </div>
             </div>
@@ -108,15 +108,17 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
     <script>
-        // WAŻNE: Tutaj następuje inicjalizacja SimpleLightbox na linkach w galerii
-        // Selektor '.gallery a' oznacza: znajdź wszystkie linki (<a>) wewnątrz elementu o klasie 'gallery'.
+        // WAŻNE: Inicjalizacja SimpleLightbox na wszystkich linkach w galerii
+        // Selektor '.gallery a' oznacza: znajdź WSZYSTKIE linki (<a>) wewnątrz elementu o klasie 'gallery'.
+        // Jeśli ten kod jest poprawnie wstawiony i CSS lightboxa jest podlinkowany, to musi działać.
         var lightbox = new SimpleLightbox('.gallery a', {
             captionSelector: 'img', // Użyj atrybutu alt obrazu jako podpisu
             captionsData: 'alt', // Możesz też użyć atrybutu 'data-alt' (który dodaliśmy)
             animationSpeed: 150,
             fadeSpeed: 200,
             scrollZoom: false,
-            // Możesz dodać więcej opcji, np. "disableScroll": true, aby zablokować przewijanie strony podczas otwarcia lightboxa
+            // Jeśli chcesz zablokować przewijanie strony podczas otwarcia lightboxa:
+            // disableScroll: true,
         });
     </script>
 </body>
