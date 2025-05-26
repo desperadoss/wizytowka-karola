@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css">
-</head>
+    </head>
 <body>
     <header>
         <div class="container">
@@ -28,25 +28,25 @@
             <div class="container">
                 <h2>Uchwycone emocje. Opowieści w kadrze.</h2>
                 <div class="gallery">
-                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Zdjęcie testowe 1">
-                        <img src="https://i.imgur.com/XChNwTv.png" alt="Zdjęcie testowe 1">
+                    <a href="images/zdjecie1.jpg" data-alt="Moje zdjęcie testowe 1">
+                        <img src="images/zdjecie1.jpg" alt="Moje zdjęcie testowe 1">
                     </a>
-                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Zdjęcie testowe 2">
-                        <img src="https://i.imgur.com/XChNwTv.png" alt="Zdjęcie testowe 2">
+                    <a href="images/zdjecie1.jpg" data-alt="Moje zdjęcie testowe 2">
+                        <img src="images/zdjecie1.jpg" alt="Moje zdjęcie testowe 2">
                     </a>
-                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Zdjęcie testowe 3">
-                        <img src="https://i.imgur.com/XChNwTv.png" alt="Zdjęcie testowe 3">
+                    <a href="images/zdjecie1.jpg" data-alt="Moje zdjęcie testowe 3">
+                        <img src="images/zdjecie1.jpg" alt="Moje zdjęcie testowe 3">
                     </a>
-                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Zdjęcie testowe 4">
-                        <img src="https://i.imgur.com/XChNwTv.png" alt="Zdjęcie testowe 4">
+                    <a href="images/zdjecie1.jpg" data-alt="Moje zdjęcie testowe 4">
+                        <img src="images/zdjecie1.jpg" alt="Moje zdjęcie testowe 4">
                     </a>
-                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Zdjęcie testowe 5">
-                        <img src="https://i.imgur.com/XChNwTv.png" alt="Zdjęcie testowe 5">
+                    <a href="images/zdjecie1.jpg" data-alt="Moje zdjęcie testowe 5">
+                        <img src="images/zdjecie1.jpg" alt="Moje zdjęcie testowe 5">
                     </a>
-                    <a href="https://i.imgur.com/XChNwTv.png" data-alt="Zdjęcie testowe 6">
-                        <img src="https://i.imgur.com/XChNwTv.png" alt="Zdjęcie testowe 6">
+                    <a href="images/zdjecie1.jpg" data-alt="Moje zdjęcie testowe 6">
+                        <img src="images/zdjecie1.jpg" alt="Moje zdjęcie testowe 6">
                     </a>
-                    </div>
+                </div>
             </div>
         </section>
 
@@ -55,7 +55,7 @@
                 <h2>O mnie</h2>
                 <p>Nazywam się Ewa K. i fotografia to moja pasja oraz sposób na opowiadanie historii. Od lat towarzyszę ludziom w najważniejszych momentach ich życia, uchwycając ulotne emocje i tworząc wspomnienia, które trwają wiecznie. Wierzę, że prawdziwa fotografia to nie tylko umiejętność techniczna, ale przede wszystkim sztuka widzenia i empatycznego podejścia do drugiego człowieka.</p>
                 <p>Specjalizuję się w fotografii ślubnej i portretowej, ale z przyjemnością podejmuję się również innych wyzwań. Moim celem jest tworzenie autentycznych, pełnych światła i naturalności kadrów, które będą dla Was cenną pamiątką.</p>
-                </div>
+            </div>
         </section>
 
         <section id="services" class="services-section">
@@ -108,17 +108,14 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
     <script>
-        // WAŻNE: Inicjalizacja SimpleLightbox na wszystkich linkach w galerii
-        // Selektor '.gallery a' oznacza: znajdź WSZYSTKIE linki (<a>) wewnątrz elementu o klasie 'gallery'.
-        // Jeśli ten kod jest poprawnie wstawiony i CSS lightboxa jest podlinkowany, to musi działać.
-        var lightbox = new SimpleLightbox('.gallery a', {
-            captionSelector: 'img', // Użyj atrybutu alt obrazu jako podpisu
-            captionsData: 'alt', // Możesz też użyć atrybutu 'data-alt' (który dodaliśmy)
-            animationSpeed: 150,
-            fadeSpeed: 200,
-            scrollZoom: false,
-            // Jeśli chcesz zablokować przewijanie strony podczas otwarcia lightboxa:
-            // disableScroll: true,
+        document.addEventListener('DOMContentLoaded', function() {
+            var lightbox = new SimpleLightbox('.gallery a', {
+                captionSelector: 'img',
+                captionsData: 'alt',
+                animationSpeed: 150,
+                fadeSpeed: 200,
+                scrollZoom: false,
+            });
         });
     </script>
 </body>
