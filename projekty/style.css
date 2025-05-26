@@ -168,7 +168,8 @@ header nav ul li a:hover::after {
 
 /* Hero Section */
 #hero {
-    background: url('https://images.unsplash.com/photo-1521590832167-738927894a4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    /* Zmień ten URL na ścieżkę do swojego zdjęcia salonu */
+    background: url('https://images.unsplash.com/photo-1557606399-52e697793d5f?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
     height: 80vh;
     display: flex;
     justify-content: center;
@@ -176,6 +177,7 @@ header nav ul li a:hover::after {
     text-align: center;
     color: var(--text-light);
     position: relative;
+
 }
 
 #hero::before {
