@@ -1,216 +1,566 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blask Włosów - Salon Fryzjerski Twoich Marzeń</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>Blask Włosów</h1>
-                <p>Twój styl, nasza pasja</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#o-nas">O Nas</a></li>
-                    <li><a href="#uslugi">Usługi</a></li>
-                    <li><a href="#galeria">Galeria</a></li>
-                    <li><a href="#zespol">Nasz Zespół</a></li>
-                    <li><a href="#opinie">Opinie</a></li>
-                    <li><a href="#kontakt">Kontakt</a></li>
-                    <li><a href="#rezerwuj" class="btn-rezerwuj">Rezerwuj Online</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+/* Ogólne style */
+:root {
+    --primary-color: #A34A28; /* Główny kolor - głęboki brąz */
+    --secondary-color: #F8E7D8; /* Jasny beż */
+    --accent-color: #E2B294; /* Akcent - cieplejszy beż */
+    --text-dark: #333;
+    --text-light: #f8f8f8;
+    --bg-dark: #2c2c2c; /* Ciemne tło dla kontrastu */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
 
-    <section id="hero">
-        <div class="hero-content">
-            <h2>Poczuj różnicę. Poczuj blask.</h2>
-            <p>Ekskluzywne usługi fryzjerskie, które wydobędą Twoje naturalne piękno.</p>
-            <a href="#rezerwuj" class="btn-primary">Umów Wizytę</a>
-        </div>
-    </section>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <section id="o-nas" class="section-padding">
-        <div class="container">
-            <h3>O Nas</h3>
-            <p>W Blasku Włosów wierzymy, że fryzura to coś więcej niż tylko cięcie. To wyraz Twojej osobowości, Twojego nastroju i Twojego stylu. Nasz salon to oaza spokoju i luksusu, gdzie doświadczony zespół pasjonatów zadba o każdy detal. Od momentu, gdy przekroczysz nasze progi, poczujesz się wyjątkowo. Używamy tylko najwyższej jakości produktów, dbając o zdrowie i kondycję Twoich włosów. Odkryj nowy wymiar piękna w Blasku Włosów.</p>
-            <div class="o-nas-grid">
-                <div class="o-nas-item">
-                    <img src="https://images.unsplash.com/photo-1596464522921-2e68dd08889a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Wnętrze salonu Blask Włosów">
-                    <h4>Luksusowe Wnętrza</h4>
-                    <p>Zrelaksuj się w eleganckim i komfortowym otoczeniu.</p>
-                </div>
-                <div class="o-nas-item">
-                    <img src="https://images.unsplash.com/photo-1621609764095-fdc321443654?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Profesjonalne narzędzia fryzjerskie">
-                    <h4>Najwyższa Jakość</h4>
-                    <p>Używamy tylko sprawdzonych i profesjonalnych produktów.</p>
-                </div>
-                <div class="o-nas-item">
-                    <img src="https://images.unsplash.com/photo-1582046467000-0e1b6f5a3f3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fryzjer stylizujący włosy klientki">
-                    <h4>Indywidualne Podejście</h4>
-                    <p>Słuchamy Twoich potrzeb i tworzymy fryzurę idealnie dopasowaną do Ciebie.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--secondary-color);
+}
 
-    <section id="uslugi" class="section-padding bg-light">
-        <div class="container">
-            <h3>Nasze Usługi</h3>
-            <div class="uslugi-grid">
-                <div class="usluga-item">
-                    <img src="https://images.unsplash.com/photo-1600868875704-58a436283526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Strzyżenie damskie">
-                    <h4>Strzyżenie Damskie</h4>
-                    <p>Od klasycznych cięć po najnowsze trendy – idealnie dopasowane do Twojej urody.</p>
-                </div>
-                <div class="usluga-item">
-                    <img src="https://images.unsplash.com/photo-1549420950-8488e040f7d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Koloryzacja włosów">
-                    <h4>Koloryzacja</h4>
-                    <p>Od subtelnych refleksów po odważne transformacje – odkryj nowy kolor włosów.</p>
-                </div>
-                <div class="usluga-item">
-                    <img src="https://images.unsplash.com/photo-1550275824-d2e8b23c21a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Pielęgnacja włosów">
-                    <h4>Intensywna Pielęgnacja</h4>
-                    <p>Rytuały odżywcze i regenerujące, które przywrócą blask i zdrowie Twoim włosom.</p>
-                </div>
-                <div class="usluga-item">
-                    <img src="https://images.unsplash.com/photo-1605497258043-41a457494a8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Strzyżenie męskie">
-                    <h4>Strzyżenie Męskie</h4>
-                    <p>Klasyczne i nowoczesne cięcia dla mężczyzn, zawsze w modzie i dopracowane.</p>
-                </div>
-                <div class="usluga-item">
-                    <img src="https://images.unsplash.com/photo-1621609764095-fdc321443654?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Stylizacja okolicznościowa">
-                    <h4>Stylizacje Okolicznościowe</h4>
-                    <p>Fryzury na każdą okazję – śluby, imprezy, sesje zdjęciowe. Bądź gwiazdą!</p>
-                </div>
-                <div class="usluga-item">
-                    <img src="https://images.unsplash.com/photo-1600868875704-58a436283526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Zabiegi trychologiczne">
-                    <h4>Trychologia</h4>
-                    <p>Diagnostyka i leczenie problemów skóry głowy i włosów dla zdrowych i mocnych włosów.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
 
-    <section id="galeria" class="section-padding">
-        <div class="container">
-            <h3>Nasze Realizacje</h3>
-            <div class="galeria-grid">
-                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fryzura 1">
-                <img src="https://images.unsplash.com/photo-1549420950-8488e040f7d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fryzura 2">
-                <img src="https://images.unsplash.com/photo-1605497258043-41a457494a8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fryzura 3">
-                <img src="https://images.unsplash.com/photo-1550275824-d2e8b23c21a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB4MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fryzura 4">
-                <img src="https://images.unsplash.com/photo-1596464522921-2e68dd08889a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB4MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fryzura 5">
-                <img src="https://images.unsplash.com/photo-1621609764095-fdc321443654?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB4MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fryzura 6">
-            </div>
-        </div>
-    </section>
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
 
-    <section id="zespol" class="section-padding bg-light">
-        <div class="container">
-            <h3>Nasz Zespół</h3>
-            <div class="zespol-grid">
-                <div class="zespol-member">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fryzjerka Anna Kowalska">
-                    <h4>Anna Kowalska</h4>
-                    <p>Mistrzyni Koloryzacji</p>
-                    <p>Z pasją podchodzi do każdego koloru, tworząc unikalne i żywe odcienie.</p>
-                </div>
-                <div class="zespol-member">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fryzjer Michał Nowak">
-                    <h4>Michał Nowak</h4>
-                    <p>Ekspert od Strzyżeń Męskich</p>
-                    <p>Perfekcja w każdym cięciu, dba o każdy detal fryzury męskiej.</p>
-                </div>
-                <div class="zespol-member">
-                    <img src="https://images.unsplash.com/photo-1596464522921-2e68dd08889a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fryzjerka Katarzyna Wiśniewska">
-                    <h4>Katarzyna Wiśniewska</h4>
-                    <p>Specjalistka od Pielęgnacji</p>
-                    <p>Zna wszystkie tajniki zdrowych i lśniących włosów, doradzi najlepsze zabiegi.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+h2 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
 
-    <section id="opinie" class="section-padding">
-        <div class="container">
-            <h3>Co Mówią Nasi Klienci</h3>
-            <div class="opinie-carousel">
-                <div class="opinia-item">
-                    <p>"Niesamowite miejsce! Moje włosy nigdy nie wyglądały lepiej. Profesjonalizm i wspaniała atmosfera!"</p>
-                    <span>- Joanna S.</span>
-                </div>
-                <div class="opinia-item">
-                    <p>"Zawsze wychodzę zadowolony. Michał jest mistrzem w swoim fachu, idealnie rozumie, czego potrzebuję."</p>
-                    <span>- Piotr K.</span>
-                </div>
-                <div class="opinia-item">
-                    <p>"Blask Włosów to mój ulubiony salon. Pielęgnacja, którą mi zalecono, zdziałała cuda. Polecam!"</p>
-                    <span>- Magda L.</span>
-                </div>
-            </div>
-        </div>
-    </section>
+h3 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
 
-    <section id="kontakt" class="section-padding bg-dark">
-        <div class="container">
-            <h3>Skontaktuj się z Nami</h3>
-            <div class="kontakt-grid">
-                <div class="kontakt-info">
-                    <h4>Odwiedź Nas</h4>
-                    <p>ul. Pięknych Włosów 7,<br> 00-001 Blaskowo</p>
-                    <h4>Zadzwoń</h4>
-                    <p><a href="tel:+48123456789">+48 123 456 789</a></p>
-                    <h4>Napisz</h4>
-                    <p><a href="mailto:info@blaskwlosow.pl">info@blaskwlosow.pl</a></p>
-                    <div class="social-links">
-                        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Logo_of_Facebook.png/640px-Logo_of_Facebook.png" alt="Facebook"></a>
-                        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/640px-Instagram_icon.png" alt="Instagram"></a>
-                    </div>
-                </div>
-                <div class="kontakt-form">
-                    <h4>Napisz do nas</h4>
-                    <form>
-                        <input type="text" placeholder="Imię i nazwisko" required>
-                        <input type="email" placeholder="Adres e-mail" required>
-                        <textarea placeholder="Twoja wiadomość" rows="5"></textarea>
-                        <button type="submit" class="btn-primary">Wyślij Wiadomość</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
 
-    <footer class="bg-dark">
-        <div class="container">
-            <p>&copy; 2025 Blask Włosów. Wszystkie prawa zastrzeżone.</p>
-        </div>
-    </footer>
+ul {
+    list-style: none;
+}
 
-    <script>
-        // Prosta skrypt do przewijania opinii (można rozbudować o karuzelę JS)
-        const opinieCarousel = document.querySelector('.opinie-carousel');
-        let scrollAmount = 0;
-        const scrollStep = 300; // Ilość pikseli do przewinięcia
-        const scrollInterval = 3000; // Czas w ms między przewinięciami
+.section-padding {
+    padding: 4rem 0;
+}
 
-        setInterval(() => {
-            if (scrollAmount < opinieCarousel.scrollWidth - opinieCarousel.clientWidth) {
-                scrollAmount += scrollStep;
-            } else {
-                scrollAmount = 0;
-            }
-            opinieCarousel.scrollTo({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
-        }, scrollInterval);
-    </script>
-</body>
-</html>
+.bg-light {
+    background-color: #f4f4f4;
+}
+
+.bg-dark {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.bg-dark h3, .bg-dark h4 {
+    color: var(--accent-color);
+}
+
+/* Przyciski */
+.btn-primary {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background-color: #7a3a22; /* Ciemniejszy odcień */
+}
+
+.btn-rezerwuj {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 0.6rem 1.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+}
+
+.btn-rezerwuj:hover {
+    background-color: #c99e7f;
+}
+
+/* Header */
+header {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    padding: 1rem 0;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+}
+
+.logo p {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-top: 0.2rem;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: var(--text-light);
+    font-weight: 400;
+    transition: color 0.3s ease;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+header nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+#hero {
+    background: url('https://images.unsplash.com/photo-1521590832167-738927894a4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ciemniejsza nakładka */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h2 {
+    font-size: 3.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* O Nas Section */
+.o-nas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.o-nas-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.o-nas-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.o-nas-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.o-nas-item h4 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Usługi Section */
+.uslugi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.usluga-item {
+    text-align: center;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.usluga-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.usluga-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.usluga-item h4 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Galeria Section */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Zespół Section */
+.zespol-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.zespol-member {
+    text-align: center;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zespol-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.zespol-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 4px solid var(--accent-color);
+}
+
+.zespol-member h4 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.zespol-member p:nth-of-type(1) { /* Opis stanowiska */
+    font-weight: 700;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+/* Opinie Section (Carousel) */
+.opinie-carousel {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem; /* Dla paska przewijania */
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.opinie-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.opinie-carousel::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+.opinie-carousel::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+.opinia-item {
+    flex: 0 0 70%; /* Dwa elementy widoczne na raz */
+    min-width: 300px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    scroll-snap-align: start;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.opinia-item p {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.opinia-item span {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+
+/* Kontakt Section */
+#kontakt {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1549420950-8488e040f7d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    color: var(--text-light);
+}
+
+#kontakt .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.kontakt-info, .kontakt-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.kontakt-info h4 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.kontakt-info p {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.kontakt-info a {
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+.kontakt-info a:hover {
+    color: #fff;
+}
+
+.social-links {
+    margin-top: 1.5rem;
+}
+
+.social-links img {
+    width: 35px;
+    height: 35px;
+    margin-right: 15px;
+    filter: invert(100%) sepia(0%) saturate(7499%) hue-rotate(248deg) brightness(115%) contrast(100%); /* Zmienia kolor ikony na biały */
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+.kontakt-form h4 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.kontakt-form form input[type="text"],
+.kontakt-form form input[type="email"],
+.kontakt-form form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--text-light);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.kontakt-form form input::placeholder,
+.kontakt-form form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.kontakt-form form input:focus,
+.kontakt-form form textarea:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.kontakt-form form button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--primary-color);
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    header nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    .o-nas-grid, .uslugi-grid, .zespol-grid, .galeria-grid, .kontakt-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .opinia-item {
+        flex: 0 0 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 2rem;
+    }
+
+    .btn-primary {
+        padding: 0.6rem 1.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+}
