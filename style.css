@@ -1,0 +1,549 @@
+/* --- STYLE DLA OGÓLNYCH ELEMENTÓW --- */
+:root {
+    --primary-font: 'Playfair Display', serif; /* Dla nagłówków, elegancka czcionka szeryfowa */
+    --secondary-font: 'Raleway', sans-serif; /* Dla treści, czcionka bezszeryfowa */
+
+    --dark-color: #1a1a1a;
+    --light-color: #f8f8f8;
+    --medium-grey: #666;
+    --accent-color: #007bff; /* Bardziej typowy akcent dla usług IT/Web */
+    --white-color: #ffffff;
+    --card-background: #f0f4f7; /* Jasne tło dla kart */
+    --card-border: #e0e6eb; /* Delikatna ramka karty */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--secondary-font);
+    line-height: 1.7;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+h1, h2, h3 {
+    font-family: var(--primary-font);
+    color: var(--dark-color);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3.5em;
+}
+
+h2 {
+    font-size: 2.8em;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+a {
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    padding: 12px 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Header i nawigacja */
+header {
+    background-color: var(--white-color);
+    padding: 25px 0;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--primary-font);
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+nav ul li a {
+    color: var(--dark-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95em;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Sekcje ogólne */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* --- STYLE DLA SEKCJI HERO / KARTY OFERTY --- */
+.hero-section {
+    background-color: var(--light-color);
+    padding: 60px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-offer-card .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.offer-card {
+    background-color: var(--white-color);
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 50px 30px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid var(--card-border);
+}
+
+.offer-card h2 {
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    color: var(--dark-color);
+}
+
+.offer-card .card-description {
+    font-size: 1.1em;
+    color: var(--medium-grey);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.offer-card .card-slogan {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-family: var(--primary-font);
+}
+
+.offer-card .card-price {
+    font-family: var(--primary-font);
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 30px;
+}
+
+.offer-card .price-value {
+    color: var(--accent-color);
+    font-size: 1.3em;
+}
+
+.offer-card .btn.card-btn {
+    margin-top: 20px;
+    padding: 15px 40px;
+    font-size: 1.2em;
+}
+
+.offer-card .card-note {
+    font-size: 0.9em;
+    color: var(--medium-grey);
+    margin-top: 30px;
+}
+
+/* --- Sekcja O mnie / O Ofercie --- */
+.about-section {
+    background-color: var(--white-color);
+    padding: 100px 0;
+}
+
+.about-section p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* --- Sekcja Portfolio (Galeria) --- */
+.gallery-section {
+    background-color: var(--light-color);
+    padding-top: 50px;
+}
+
+.gallery-section h2 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: var(--dark-color);
+}
+
+.gallery {
+    display: grid;
+    /* Ustawienie na 3 kolumny dla większych ekranów */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery a {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    transition: transform 0.3s ease; /* Płynne powiększanie */
+}
+
+.gallery a:hover {
+    transform: scale(1.03); /* Powiększenie po najechaniu */
+}
+
+.gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+.gallery a:hover img {
+    filter: brightness(0.9);
+}
+
+/* --- Sekcja Oferta / Cennik --- */
+.pricing-section {
+    background-color: var(--white-color);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.pricing-section h2 {
+    margin-bottom: 25px;
+}
+
+.pricing-section p {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.pricing-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
+    justify-content: center;
+}
+
+.pricing-card {
+    background-color: var(--card-background);
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px;
+    border: 1px solid var(--card-border);
+}
+
+.pricing-card h3 {
+    font-family: var(--primary-font);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+    text-align: center;
+}
+
+.pricing-card .card-description {
+    font-size: 1em;
+    color: var(--medium-grey);
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.pricing-card .card-price {
+    font-family: var(--primary-font);
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.pricing-card .price-value {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.pricing-card .btn.card-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+}
+
+.pricing-note {
+    font-style: italic;
+    color: var(--medium-grey);
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 0.95em;
+}
+
+/* --- Sekcja Kontakt --- */
+.contact-section {
+    background-color: var(--light-color);
+    padding: 80px 0;
+}
+
+.contact-section h2 {
+    margin-bottom: 30px;
+}
+
+.contact-section p {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    font-size: 1.1em;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--white-color);
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: var(--secondary-font);
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.social-links {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.social-links p {
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.social-links a {
+    font-size: 2em;
+    margin: 0 15px;
+    color: var(--medium-grey);
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--white-color);
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsywność */
+@media (max-width: 992px) {
+    .logo {
+        font-size: 1.8em;
+    }
+    nav ul li {
+        margin-left: 25px;
+    }
+    h1 {
+        font-size: 2.8em;
+    }
+    h2 {
+        font-size: 2.2em;
+    }
+    /* Dla średnich ekranów (tablety), portfolio przechodzi na 2 kolumny */
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery img {
+        height: 250px;
+    }
+    .offer-card h2 {
+        font-size: 2em;
+    }
+    .offer-card .card-price {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+    .logo {
+        margin-bottom: 20px;
+    }
+    nav ul li {
+        margin: 0 15px;
+    }
+    h1 {
+        font-size: 2.2em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    section {
+        padding: 60px 0;
+    }
+    /* Dla małych ekranów (telefony), portfolio przechodzi na 1 kolumnę */
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    .gallery img {
+        height: 200px;
+    }
+    .pricing-cards-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .pricing-card {
+        min-height: auto;
+    }
+    .contact-form {
+        padding: 30px;
+    }
+    .offer-card {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.6em;
+    }
+    nav ul li {
+        margin: 0 10px;
+        font-size: 0.85em;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+    .container {
+        padding: 0 15px;
+    }
+    .gallery {
+        gap: 10px;
+    }
+    .gallery img {
+        height: 180px;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .social-links a {
+        font-size: 1.8em;
+        margin: 0 10px;
+    }
+    .offer-card h2 {
+        font-size: 1.8em;
+    }
+    .offer-card .card-description {
+        font-size: 1em;
+    }
+    .offer-card .card-price {
+        font-size: 1.6em;
+    }
+}
