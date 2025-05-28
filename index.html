@@ -3,151 +3,402 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karol Sites - Tworzenie Stron Internetowych</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Karol Sites - Tworzenie Stron Internetowych Nowoczesny Design z Animacjami</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden; /* Zapobieganie poziomemu przewijaniu przez animacje */
+        }
+        .hero-bg-vibrant {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+        }
+        .section-title {
+            @apply text-4xl font-bold text-gray-800 mb-4 text-center;
+        }
+        .section-subtitle {
+            @apply text-xl text-gray-600 mb-12 text-center max-w-2xl mx-auto;
+        }
+
+        /* Animowany podkreślnik dla linków nawigacji */
+        .nav-link {
+            @apply text-gray-700 px-3 py-2 rounded-md text-sm font-medium transition-colors relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: theme('colors.purple.600');
+            transition: width 0.3s ease-in-out;
+        }
+        .nav-link:hover::after {
+            width: 70%;
+        }
+        .nav-link:hover {
+            @apply text-purple-600;
+        }
+        .nav-link-active {
+            @apply text-purple-600 bg-purple-100 px-3 py-2 rounded-md text-sm font-medium;
+        }
+        .nav-link-active::after {
+            width: 0;
+        }
+
+
+        .card {
+            @apply bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300;
+        }
+        .btn-primary {
+            @apply bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px] active:translate-y-0 active:shadow-inner;
+        }
+        .btn-secondary {
+            @apply bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px] active:translate-y-0 active:shadow-inner;
+        }
+        .btn-tertiary {
+            @apply bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px] active:translate-y-0 active:shadow-inner;
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animacje dla tekstu w sekcji Hero */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .hero-title-animate {
+            animation: fadeInDown 0.8s ease-out forwards;
+        }
+        .hero-subtitle-animate {
+            animation: fadeInUp 0.8s ease-out 0.3s forwards;
+            opacity: 0; /* Start hidden */
+        }
+        .hero-slogan-animate {
+            animation: fadeInUp 0.8s ease-out 0.6s forwards;
+            opacity: 0; /* Start hidden */
+        }
+        .hero-price-animate {
+            animation: zoomIn 0.7s ease-out 0.9s forwards;
+            opacity: 0; /* Start hidden */
+        }
+        .hero-button-animate {
+            animation: fadeInUp 0.8s ease-out 1.2s forwards;
+            opacity: 0; /* Start hidden */
+        }
+
+        /* Animacja dla ikon w kartach cennika */
+        .pricing-icon-container {
+            @apply transition-transform duration-300 ease-out;
+        }
+        .pricing-card:hover .pricing-icon-container {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* Ulepszony hover dla kart portfolio */
+        .portfolio-card .portfolio-image {
+            @apply transition-transform duration-500 ease-in-out;
+        }
+        .portfolio-card:hover .portfolio-image {
+            transform: scale(1.1);
+        }
+        .portfolio-card .portfolio-overlay {
+            @apply absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out;
+        }
+        .portfolio-overlay-icon {
+            @apply text-white w-12 h-12 transform scale-0 group-hover:scale-100 transition-transform duration-300 ease-out delay-100;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Karol Sites - Tworzenie Stron</div>
-                <ul>
-                    <li><a href="#hero">Start</a></li>
-                    <li><a href="#about">O Ofercie</a></li>
-                    <li><a href="#portfolio">Realizacje</a></li>
-                    <li><a href="#pricing">Cennik</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
-                </ul>
+<body class="bg-gray-50 text-gray-700 antialiased">
+
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-purple-600">
+                    <a href="#hero">Karol<span class="text-orange-500">Sites</span></a>
+                </div>
+                <div class="hidden md:flex space-x-1">
+                    <a href="#hero" class="nav-link">Start</a>
+                    <a href="#about" class="nav-link">O Ofercie</a>
+                    <a href="#portfolio" class="nav-link">Realizacje</a>
+                    <a href="#pricing" class="nav-link">Cennik</a>
+                    <a href="#contact" class="nav-link">Kontakt</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
             </nav>
+            <div id="mobile-menu" class="hidden md:hidden mt-2 space-y-1">
+                <a href="#hero" class="block nav-link text-center">Start</a>
+                <a href="#about" class="block nav-link text-center">O Ofercie</a>
+                <a href="#portfolio" class="block nav-link text-center">Realizacje</a>
+                <a href="#pricing" class="block nav-link text-center">Cennik</a>
+                <a href="#contact" class="block nav-link text-center">Kontakt</a>
+            </div>
         </div>
     </header>
 
     <main>
-        <section id="hero" class="hero-section hero-offer-card">
-            <div class="container">
-                <div class="offer-card">
-                    <h2>Strony od Karola</h2>
-                    <p class="card-description">
+        <section id="hero" class="hero-bg-vibrant text-white min-h-screen flex items-center justify-center py-20 px-4 overflow-hidden">
+            <div class="container mx-auto text-center">
+                <div class="bg-black/30 backdrop-blur-lg p-8 md:p-16 rounded-xl shadow-2xl max-w-3xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-white hero-title-animate">
+                        Strony od <span class="text-yellow-300">Karola</span>
+                    </h1>
+                    <p class="text-lg md:text-xl mb-6 text-gray-50 hero-subtitle-animate">
                         Masz firmę lub usługę i chcesz prostą, przejrzystą stronę internetową?
                         Zrobię dla Ciebie stronę-wizytówkę, formularz kontaktowy, mapę i więcej.
                     </p>
-                    <p class="card-slogan">Szybko, tanio i solidnie!</p>
-                    <div class="card-price">Ceny już od <span class="price-value">200 zł</span></div>
-                    <a href="#contact" class="btn card-btn">Napisz do mnie</a>
-                    <p class="card-note">
+                    <p class="text-2xl md:text-3xl font-bold text-yellow-200 mb-8 italic hero-slogan-animate">
+                        Szybko, tanio i solidnie!
+                    </p>
+                    <div class="text-3xl md:text-4xl font-bold mb-10 text-white hero-price-animate">
+                        Ceny już od <span class="text-yellow-300 underline decoration-wavy decoration-2">200 zł</span>
+                    </div>
+                    <a href="#contact" class="btn-primary text-lg inline-block hero-button-animate">Napisz do mnie</a>
+                    <p class="mt-8 text-sm text-gray-100 hero-subtitle-animate" style="animation-delay: 1.5s;">
                         Portfolio dostępne poniżej. Wystawiam rachunek przez Useme na życzenie.
                     </p>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about-section">
-            <div class="container">
-                <h2>Czym się zajmuję?</h2>
-                <p>Jestem Karol i tworzę profesjonalne, estetyczne i funkcjonalne strony internetowe dla małych firm i usługodawców. Moim celem jest dostarczenie Ci skutecznej wizytówki w sieci, która przyciągnie nowych klientów i będzie jasnym źródłem informacji o Twojej działalności.</p>
-                <p>Nie potrzebujesz skomplikowanych rozwiązań? Szukasz strony, która po prostu działa, jest czytelna i łatwo dostępna dla każdego? Dobrze trafiłeś! Skupiam się na prostocie i efektywności, aby Twoja obecność online była skuteczna bez zbędnych kosztów.</p>
-            </div>
-        </section>
-
-        <section id="portfolio" class="gallery-section">
-            <div class="container">
-                <h2>Przykładowe Realizacje</h2>
-                <p>Zobacz, co mogę dla Ciebie stworzyć. (Upewnij się, że zdjęcia są w tym samym folderze, lub podmień ścieżki!)</p>
-                <div class="gallery">
-                    <a href="projekty/projekt1/fryzjer.html">Strona internetowa dla salonu fryzjerskiego
-                        <img src="fryzjer.png" alt="Strona dla fryzjera">
-                    </a>
-                    <a href="projekty/projekt2/UsługiElektryczne.html">Strona internetowa dla usług elektrycznych
-                        <img src="tech.png" alt="Strona dla usług technicznych">
-                    </a>
-                    <a href="projekty/projekt3/index.html">Strona internetowa dla fotografa
-                        <img src="fotografia.png" alt="Strona dla fotografa">
-                    </a>
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title animate-on-scroll">Czym się <span class="text-teal-500">zajmuję?</span></h2>
+                <p class="section-subtitle animate-on-scroll" style="transition-delay: 0.1s;">
+                    Jestem Karol i tworzę profesjonalne, estetyczne i funkcjonalne strony internetowe dla małych firm i usługodawców. Moim celem jest dostarczenie Ci skutecznej wizytówki w sieci.
+                </p>
+                <div class="max-w-3xl mx-auto text-center text-gray-600 space-y-6">
+                    <p class="animate-on-scroll" style="transition-delay: 0.2s;">
+                        Nie potrzebujesz skomplikowanych rozwiązań? Szukasz strony, która po prostu działa, jest czytelna i łatwo dostępna dla każdego? Dobrze trafiłeś! Skupiam się na prostocie i efektywności, aby Twoja obecność online była skuteczna bez zbędnych kosztów.
+                    </p>
+                    <p class="animate-on-scroll" style="transition-delay: 0.3s;">
+                        Moje projekty charakteryzują się nowoczesnym designem, optymalizacją pod kątem urządzeń mobilnych (RWD) oraz intuicyjną nawigacją. Stawiam na <strong class="text-teal-600">klarowność przekazu</strong> i <strong class="text-purple-600">estetykę wykonania</strong>.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section id="pricing" class="pricing-section">
-            <div class="container">
-                <h2>Co oferuję i ile to kosztuje?</h2>
-                <p>Poniżej znajdziesz orientacyjny cennik i zakres usług. Każdy projekt wyceniam indywidualnie, aby najlepiej dopasować się do Twoich potrzeb i budżetu.</p>
-                <div class="pricing-cards-wrapper">
-                    <div class="pricing-card">
-                        <h3>Strona-Wizytówka</h3>
-                        <p class="card-description">
-                            Idealna dla małych firm i usługodawców. Jedna, przejrzysta strona z najważniejszymi informacjami:
-                            O firmie, kontakt, oferta, mapa, galeria (do 5 zdjęć).
-                        </p>
-                        <div class="card-price">Od <span class="price-value">200 zł</span></div>
-                        <a href="#contact" class="btn card-btn">Dowiedz się więcej</a>
-                    </div>
+        <section id="portfolio" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title animate-on-scroll">Przykładowe <span class="text-orange-500">Realizacje</span></h2>
+                <p class="section-subtitle animate-on-scroll" style="transition-delay: 0.1s;">Zobacz, co mogę dla Ciebie stworzyć. Kliknij na obrazek, aby zobaczyć demo (jeśli dostępne).</p>
+                <div class="gallery grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <a href="projekty/projekt1/fryzjer.html" title="Przykład strony dla salonu fryzjerskiego" class="portfolio-card card animate-on-scroll group border-t-4 border-purple-500 relative" style="transition-delay: 0.2s;">
+                        <img src="fryzjer.png" alt="Strona dla fryzjera" class="portfolio-image w-full h-64 object-cover">
+                        <div class="portfolio-overlay">
+                            <svg class="portfolio-overlay-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-purple-700">Salon Fryzjerski</h3>
+                            <p class="text-gray-600 text-sm">Nowoczesna wizytówka dla salonu fryzjerskiego z galerią i cennikiem.</p>
+                        </div>
+                    </a>
+                     <a href="projekty/projekt2/UsługiElektryczne.html" title="Przykład strony dla usług elektrycznych" class="portfolio-card card animate-on-scroll group border-t-4 border-orange-500 relative" style="transition-delay: 0.3s;">
+                        <img src="tech.png" alt="Strona dla usług technicznych" class="portfolio-image w-full h-64 object-cover">
+                        <div class="portfolio-overlay">
+                             <svg class="portfolio-overlay-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-orange-700">Usługi Elektryczne</h3>
+                            <p class="text-gray-600 text-sm">Przejrzysta strona dla firmy świadczącej usługi elektryczne, z formularzem kontaktowym.</p>
+                        </div>
+                    </a>
+                    <a href="projekty/projekt3/index.html" title="Przykład strony dla fotografa" class="portfolio-card card animate-on-scroll group border-t-4 border-teal-500 relative" style="transition-delay: 0.4s;">
+                        <img src="fotografia.png" alt="Strona dla fotografa" class="portfolio-image w-full h-64 object-cover">
+                         <div class="portfolio-overlay">
+                             <svg class="portfolio-overlay-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-teal-700">Portfolio Fotografa</h3>
+                            <p class="text-gray-600 text-sm">Elegancka strona prezentująca portfolio fotografa, zoptymalizowana pod zdjęcia.</p>
+                        </div>
+                    </a>
+                </div>
+                 <p class="text-center mt-12 text-gray-600 animate-on-scroll" style="transition-delay: 0.5s;">Uwaga: Powyższe linki i obrazy to przykłady. Podmień je na rzeczywiste realizacje.</p>
+            </div>
+        </section>
 
-                    <div class="pricing-card">
-                        <h3>Strona z Formularzem</h3>
-                        <p class="card-description">
-                            Strona-wizytówka wzbogacona o funkcjonalny formularz kontaktowy.
-                            Klienci mogą łatwo wysłać zapytanie, a Ty otrzymasz je na maila.
+        <section id="pricing" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title animate-on-scroll">Co oferuję i ile to <span class="text-purple-600">kosztuje?</span></h2>
+                <p class="section-subtitle animate-on-scroll" style="transition-delay: 0.1s;">
+                    Poniżej znajdziesz orientacyjny cennik. Każdy projekt wyceniam indywidualnie, aby najlepiej dopasować się do Twoich potrzeb i budżetu.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="pricing-card card p-8 flex flex-col items-center text-center animate-on-scroll" style="transition-delay: 0.2s;">
+                        <div class="pricing-icon-container bg-teal-100 p-4 rounded-full mb-6">
+                            <svg class="w-12 h-12 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Strona-Wizytówka</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">
+                            Idealna dla małych firm. Jedna, przejrzysta strona z najważniejszymi informacjami: O firmie, kontakt, oferta, mapa, galeria (do 5 zdjęć).
                         </p>
-                        <div class="card-price">Od <span class="price-value">300 zł</span></div>
-                        <a href="#contact" class="btn card-btn">Zapytaj o ten pakiet</a>
+                        <div class="text-3xl font-extrabold text-teal-600 mb-6">Od 200 zł</div>
+                        <a href="#contact" class="btn-secondary w-full">Dowiedz się więcej</a>
                     </div>
-
-                    <div class="pricing-card">
-                        <h3>Rozbudowana Strona</h3>
-                        <p class="card-description">
-                            Więcej podstron (np. Usługi, O nas, Kontakt), rozbudowana galeria,
-                            integracja z mediami społecznościowymi. Dostosowana do Twoich potrzeb.
+                    <div class="pricing-card card p-8 flex flex-col items-center text-center ring-4 ring-orange-500 scale-105 animate-on-scroll" style="transition-delay: 0.3s;">
+                         <div class="absolute top-0 -translate-y-1/2 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Popularne</div>
+                        <div class="pricing-icon-container bg-orange-100 p-4 rounded-full mb-6">
+                           <svg class="w-12 h-12 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Strona z Formularzem</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">
+                            Strona-wizytówka wzbogacona o funkcjonalny formularz kontaktowy. Klienci mogą łatwo wysłać zapytanie.
                         </p>
-                        <div class="card-price">Wycena <span class="price-value">Indywidualna</span></div>
-                        <a href="#contact" class="btn card-btn">Poproś o wycenę</a>
+                        <div class="text-3xl font-extrabold text-orange-600 mb-6">Od 300 zł</div>
+                        <a href="#contact" class="btn-primary w-full">Zapytaj o ten pakiet</a>
+                    </div>
+                    <div class="pricing-card card p-8 flex flex-col items-center text-center animate-on-scroll" style="transition-delay: 0.4s;">
+                        <div class="pricing-icon-container bg-purple-100 p-4 rounded-full mb-6">
+                            <svg class="w-12 h-12 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Rozbudowana Strona</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">
+                            Więcej podstron (np. Usługi, O nas), rozbudowana galeria, integracja z mediami społecznościowymi. Dostosowana do Twoich potrzeb.
+                        </p>
+                        <div class="text-3xl font-extrabold text-purple-600 mb-6">Wycena Indywidualna</div>
+                        <a href="#contact" class="btn-tertiary w-full">Poproś o wycenę</a>
                     </div>
                 </div>
-                <p class="pricing-note">
+                <p class="text-center mt-12 text-gray-600 text-sm animate-on-scroll" style="transition-delay: 0.5s;">
                     Wszystkie strony są responsywne (dostosowane do urządzeń mobilnych).
                     Cena nie obejmuje kosztów domeny i hostingu. Wystawiam rachunek przez Useme na życzenie.
                 </p>
             </div>
         </section>
 
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2>Napisz do mnie!</h2>
-                <p>Chcesz dowiedzieć się więcej lub zamówić stronę? Skontaktuj się ze mną!</p>
-                <form class="contact-form" action="https://formspree.io/f/mqaqvjor" method="POST">
-                    <input type="text" name="name" placeholder="Twoje imię i nazwisko" required>
-                    <input type="email" name="email" placeholder="Twój adres e-mail" required>
-                    <textarea name="message" placeholder="Opisz, jakiej strony potrzebujesz lub zadaj pytanie." rows="6" required></textarea>
-                    <button type="submit" class="btn">Wyślij wiadomość</button>
+        <section id="contact" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title animate-on-scroll">Napisz do <span class="text-orange-500">mnie!</span></h2>
+                <p class="section-subtitle animate-on-scroll" style="transition-delay: 0.1s;">
+                    Chcesz dowiedzieć się więcej lub zamówić stronę? Skontaktuj się ze mną! Wypełnij formularz lub znajdź mnie w mediach społecznościowych.
+                </p>
+                <div class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-2xl animate-on-scroll" style="transition-delay: 0.2s;">
+                    <form action="https://formspree.io/f/mqaqvjor" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Imię i nazwisko</label>
+                            <input type="text" name="name" id="name" placeholder="Twoje imię i nazwisko" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Adres e-mail</label>
+                            <input type="email" name="email" id="email" placeholder="Twój adres e-mail" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Wiadomość</label>
+                            <textarea name="message" id="message" placeholder="Opisz, jakiej strony potrzebujesz lub zadaj pytanie." rows="6" required
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition duration-150 ease-in-out"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn-primary w-full">Wyślij wiadomość</button>
+                        </div>
                     </form>
-                <div class="social-links">
-                    <p>Znajdź mnie również:</p>
-                    <a href="https://www.linkedin.com/in/bor%C3%B3wa-undefined-639a4a306/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/desperadoss" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <div class="mt-12 text-center">
+                        <p class="text-gray-600 mb-4">Znajdź mnie również:</p>
+                        <div class="flex justify-center space-x-6">
+                            <a href="https://www.linkedin.com/in/bor%C3%B3wa-undefined-639a4a306/" target="_blank" aria-label="LinkedIn" class="text-gray-500 hover:text-purple-600 transition-all duration-300 hover:scale-110 transform">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                            </a>
+                            <a href="https://github.com/desperadoss" target="_blank" aria-label="GitHub" class="text-gray-500 hover:text-teal-600 transition-all duration-300 hover:scale-110 transform">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.419 2.865 8.166 6.839 9.489.5.09.682-.218.682-.484 0-.238-.009-.869-.014-1.705-2.782.602-3.369-1.34-3.369-1.34-.455-1.156-1.11-1.465-1.11-1.465-.909-.62.069-.608.069-.608 1.004.071 1.532 1.03 1.532 1.03.891 1.529 2.341 1.089 2.91.833.091-.647.349-1.086.635-1.335-2.22-.252-4.555-1.112-4.555-4.943 0-1.091.39-1.984 1.029-2.682-.103-.253-.446-1.27.098-2.645 0 0 .84-.269 2.75 1.025A9.548 9.548 0 0112 6.836c.85.004 1.705.114 2.505.336 1.909-1.294 2.748-1.025 2.748-1.025.546 1.375.203 2.392.1 2.645.64.698 1.027 1.591 1.027 2.682 0 3.841-2.337 4.687-4.565 4.935.359.307.679.917.679 1.849 0 1.335-.012 2.415-.012 2.741 0 .269.18.579.688.481A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Karol Sites - Tworzenie Stron Internetowych. Wszelkie prawa zastrzeżone.</p>
-            <p><a href="#">Polityka Prywatności</a></p>
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; <span id="currentYear"></span> Karol Sites - Tworzenie Stron Internetowych. Wszelkie prawa zastrzeżone.</p>
+            <p class="mt-2">
+                <a href="#" class="hover:text-orange-400 transition-colors">Polityka Prywatności</a>
+            </p>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var lightbox = new SimpleLightbox('.gallery a', {
-                captionSelector: 'img',
-                captionsData: 'alt',
-                animationSpeed: 150,
-                fadeSpeed: 200,
-                scrollZoom: false,
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            const mobileNavLinks = mobileMenu.querySelectorAll('a');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
             });
+
+            if (typeof SimpleLightbox !== 'undefined') {
+                var lightbox = new SimpleLightbox('.gallery a', {
+                    captionSelector: 'self', 
+                    captionsData: 'title',
+                    animationSpeed: 150,
+                    fadeSpeed: 200,
+                    scrollZoom: false,
+                });
+            }
+
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            const scrollElements = document.querySelectorAll('.animate-on-scroll');
+            const elementInView = (el, dividend = 1) => {
+                const elementTop = el.getBoundingClientRect().top;
+                return (
+                    elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+                );
+            };
+            const displayScrollElement = (element) => {
+                element.classList.add('is-visible');
+            };
+            const handleScrollAnimation = () => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 1.15)) { 
+                        displayScrollElement(el);
+                    }
+                });
+            }
+            window.addEventListener('scroll', () => {
+                handleScrollAnimation();
+            });
+            handleScrollAnimation();
         });
     </script>
 </body>
